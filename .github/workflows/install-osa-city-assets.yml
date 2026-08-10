@@ -1,0 +1,160 @@
+name: Install OSA CITY final assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - osa-city-final-assets.zip
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Require upload archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f osa-city-final-assets.zip
+
+      - name: Extract and verify exact assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .osa-city-upload
+          mkdir .osa-city-upload
+          unzip -q osa-city-final-assets.zip -d .osa-city-upload
+          cd .osa-city-upload
+          test -f SHA256SUMS.txt
+          sha256sum -c SHA256SUMS.txt
+          for f in \
+            osa-city-hero.jpg \
+            osa-city-ecosystem.jpg \
+            osa-current-builds-grid.jpg \
+            osa-proof-repo-street.jpg \
+            osa-operating-flow.jpg \
+            osa-stack-district.jpg; do
+              test -s "$f"
+              test "$(file -b --mime-type "$f")" = "image/jpeg"
+          done
+
+      - name: Install assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          cp .osa-city-upload/osa-city-hero.jpg assets/
+          cp .osa-city-upload/osa-city-ecosystem.jpg assets/
+          cp .osa-city-upload/osa-current-builds-grid.jpg assets/
+          cp .osa-city-upload/osa-proof-repo-street.jpg assets/
+          cp .osa-city-upload/osa-operating-flow.jpg assets/
+          cp .osa-city-upload/osa-stack-district.jpg assets/
+
+      - name: Point README at verified final JPG set
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path("README.md")
+          s = p.read_text(encoding="utf-8")
+
+          s = s.replace("README.md v1.0 — OSA CITY // AGENTIC INFRASTRUCTURE ERA", "README.md v1.1 — OSA CITY // AGENTIC INFRASTRUCTURE ERA")
+          s = s.replace("Visual contract: preserve existing OSA CITY assets; update the system map and project data in markdown.", "Visual contract: final OSA CITY visual set; markdown and graphics describe the same system map.")
+
+          s = s.replace(
+              '<img src="./assets/osa-city-banner.png" alt="OSA CITY — cyberpunk operator banner" width="100%" />',
+              '<img src="./assets/osa-city-hero.jpg" alt="OSA CITY — HERO" width="100%" />'
+          )
+          s = s.replace(
+              '<img src="./assets/osa-city-map.png" alt="OSA CITY — AI systems map" width="86%" />',
+              '<img src="./assets/osa-city-ecosystem.jpg" alt="OSA CITY — ecosystem map" width="90%" />'
+          )
+          s = s.replace(
+              '<img src="./assets/operator-hub.png" alt="OSA CITY — operator control hub" width="82%" />',
+              '<img src="./assets/osa-current-builds-grid.jpg" alt="OSA CITY — current builds district" width="90%" />'
+          )
+          s = s.replace(
+              '<img src="./assets/neon-builder-city.png" alt="OSA CITY — neon agent runtime district" width="82%" />',
+              '<img src="./assets/osa-operating-flow.jpg" alt="OSA CITY — operating flow and validation loop" width="90%" />'
+          )
+          s = s.replace(
+              '<img src="./assets/osa-logo.png" alt="OSA cyberpunk logo" width="280" />',
+              '<img src="./assets/osa-stack-district.jpg" alt="OSA CITY — stack district" width="90%" />'
+          )
+
+          proof_anchor = """```txt
+REPO RULE:
+No important repo exists only to look impressive.
+It needs a purpose, source-of-truth boundary, validation state and next step.
+```
+"""
+          proof_image = proof_anchor + """
+<p align="center">
+  <img src="./assets/osa-proof-repo-street.jpg" alt="OSA CITY — proof repo street" width="90%" />
+</p>
+"""
+          if "osa-proof-repo-street.jpg" not in s:
+              if proof_anchor not in s:
+                  raise SystemExit("README proof anchor not found; refusing to guess")
+              s = s.replace(proof_anchor, proof_image, 1)
+
+          expected = [
+              "osa-city-hero.jpg",
+              "osa-city-ecosystem.jpg",
+              "osa-current-builds-grid.jpg",
+              "osa-proof-repo-street.jpg",
+              "osa-operating-flow.jpg",
+              "osa-stack-district.jpg",
+          ]
+          missing = [x for x in expected if x not in s]
+          if missing:
+              raise SystemExit(f"README final asset references missing: {missing}")
+
+          p.write_text(s, encoding="utf-8")
+
+      - name: Update asset manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > assets/README_ASSETS.md <<'EOF'
+          # OSA CITY assets
+
+          Final verified OSA CITY visual set used by the GitHub profile README.
+
+          ## Active README graphics
+
+          - `osa-city-hero.jpg` — main OSA CITY hero
+          - `osa-city-ecosystem.jpg` — ecosystem / city map
+          - `osa-current-builds-grid.jpg` — current builds district
+          - `osa-proof-repo-street.jpg` — proof repo street
+          - `osa-operating-flow.jpg` — operating flow / validation loop
+          - `osa-stack-district.jpg` — execution stack district
+
+          The source upload archive is validated against `SHA256SUMS.txt` before these files can replace README references.
+          EOF
+
+      - name: Remove upload archive and temporary files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .osa-city-upload osa-city-final-assets.zip
+
+      - name: Commit verified visual set
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets osa-city-final-assets.zip || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Install verified final OSA CITY visual set"
+          git push origin HEAD:main
