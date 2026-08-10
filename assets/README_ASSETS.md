@@ -1,28 +1,17 @@
 # OSA CITY assets
 
-Final OSA CITY v1 visual set used by the GitHub profile README.
+These files are reused from the existing generated graphics in the current ChatGPT session.
 
-## Active README graphics
+## Files
 
-- `osa-city-hero.webp` — main OSA CITY hero
-- `osa-city-ecosystem.webp` — ecosystem / city map
-- `osa-current-builds-grid.webp` — current builds district
-- `osa-proof-repo-street.webp` — proof repo street
-- `osa-operating-flow.webp` — operating flow / validation loop
-- `osa-stack-district.webp` — execution stack district
-
-## Legacy assets
-
-The previous PNG set remains in the repository only as rollback history and is no longer referenced by the profile README:
-
-- `osa-city-banner.png`
-- `osa-city-map.png`
-- `operator-hub.png`
-- `neon-builder-city.png`
-- `osa-logo.png`
+- `osa-city-banner.png` — wide top banner
+- `osa-city-map.png` — map/diagram style section graphic
+- `operator-hub.png` — operator/control room section graphic
+- `neon-builder-city.png` — neon city/build district graphic
+- `osa-logo.png` — logo/avatar style graphic
 
 ## README pattern
 
 ASCII → text → graphic → ASCII → text → graphic.
 
-The graphics are visual anchors; markdown remains the working system and source of the detailed project map.
+Do not replace the whole README with one image. The images are anchors; the markdown remains the working system.
