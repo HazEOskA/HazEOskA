@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - osa-city-final-assets.zip
+      - .github/workflows/install-osa-city-assets.yml
   workflow_dispatch:
 
 permissions:
@@ -89,16 +90,16 @@ jobs:
           )
 
           proof_anchor = """```txt
-REPO RULE:
-No important repo exists only to look impressive.
-It needs a purpose, source-of-truth boundary, validation state and next step.
-```
-"""
+          REPO RULE:
+          No important repo exists only to look impressive.
+          It needs a purpose, source-of-truth boundary, validation state and next step.
+          ```
+          """
           proof_image = proof_anchor + """
-<p align="center">
-  <img src="./assets/osa-proof-repo-street.jpg" alt="OSA CITY — proof repo street" width="90%" />
-</p>
-"""
+          <p align="center">
+            <img src="./assets/osa-proof-repo-street.jpg" alt="OSA CITY — proof repo street" width="90%" />
+          </p>
+          """
           if "osa-proof-repo-street.jpg" not in s:
               if proof_anchor not in s:
                   raise SystemExit("README proof anchor not found; refusing to guess")
