@@ -1,9 +1,9 @@
 <!--
-README.md v1.0 — OSA CITY // AGENTIC INFRASTRUCTURE ERA
+README.md v1.1 — OSA CITY // AGENTIC INFRASTRUCTURE ERA
 Repo: HazEOskA/HazEOskA
 Structure: ASCII → text → graphic → ASCII → text → graphic
 Rule: GitHub profile as a cyberpunk builder map, not a standard CV.
-Visual contract: preserve existing OSA CITY assets; update the system map and project data in markdown.
+Visual contract: final OSA CITY visual set; markdown and graphics describe the same system map.
 -->
 
 <div align="center">
@@ -27,7 +27,7 @@ Visual contract: preserve existing OSA CITY assets; update the system map and pr
 </p>
 
 <p align="center">
-  <img src="./assets/osa-city-banner.png" alt="OSA CITY — cyberpunk operator banner" width="100%" />
+  <img src="./assets/osa-city-hero.jpg" alt="OSA CITY — HERO" width="100%" />
 </p>
 
 ---
@@ -62,7 +62,7 @@ I treat it as a programmable execution layer that needs routing, permissions, st
 ---
 
 <p align="center">
-  <img src="./assets/osa-city-map.png" alt="OSA CITY — AI systems map" width="86%" />
+  <img src="./assets/osa-city-ecosystem.jpg" alt="OSA CITY — ecosystem map" width="90%" />
 </p>
 
 ```txt
@@ -199,7 +199,7 @@ Systems and lanes:
 ---
 
 <p align="center">
-  <img src="./assets/operator-hub.png" alt="OSA CITY — operator control hub" width="82%" />
+  <img src="./assets/osa-current-builds-grid.jpg" alt="OSA CITY — current builds district" width="90%" />
 </p>
 
 ```txt
@@ -229,6 +229,10 @@ REPO RULE:
 No important repo exists only to look impressive.
 It needs a purpose, source-of-truth boundary, validation state and next step.
 ```
+
+<p align="center">
+  <img src="./assets/osa-proof-repo-street.jpg" alt="OSA CITY — proof repo street" width="90%" />
+</p>
 
 ---
 
@@ -273,7 +277,7 @@ For serious runtime work I also lock the execution contract:
 ---
 
 <p align="center">
-  <img src="./assets/neon-builder-city.png" alt="OSA CITY — neon agent runtime district" width="82%" />
+  <img src="./assets/osa-operating-flow.jpg" alt="OSA CITY — operating flow and validation loop" width="90%" />
 </p>
 
 ```txt
@@ -367,7 +371,7 @@ UNKNOWN IS BETTER THAN INVENTED
 ---
 
 <p align="center">
-  <img src="./assets/osa-logo.png" alt="OSA cyberpunk logo" width="280" />
+  <img src="./assets/osa-stack-district.jpg" alt="OSA CITY — stack district" width="90%" />
 </p>
 
 ```txt
