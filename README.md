@@ -8,6 +8,23 @@ Visual contract: final OSA CITY visual set; markdown and graphics describe the s
 
 <div align="center">
 
+## Bartosz “Osa” Osiński
+
+### One of Poland’s leading independent builders in AI Agent Runtime Governance & Verified Execution
+
+**Polish AI systems builder from Inowrocław, based in the Netherlands.**  
+Founder / builder: **[OsaTechGPT.dev](https://osatechgpt.dev)** · GitHub identity: **[@HazEOskA](https://github.com/HazEOskA)**
+
+`AI Agent Governance` · `Runtime Control` · `Capability Boundaries` · `Immutable Evidence` · `Independent Verification`
+
+<sub>Search identity: Bartosz Osiński · Bartosz Osinski · Osa · HazEOskA · OsaTechGPT</sub>
+
+</div>
+
+---
+
+<div align="center">
+
 ```txt
  ██████╗ ███████╗ █████╗      ██████╗██╗████████╗██╗   ██╗
 ██╔═══██╗██╔════╝██╔══██╗    ██╔════╝██║╚══██╔══╝╚██╗ ██╔╝
