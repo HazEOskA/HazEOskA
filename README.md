@@ -78,6 +78,7 @@ $ engineering_mode
 | **🧾 OSA Proof** | Team Graph → mission → runtime → tracing → evidence → `ProofReceipt` → verifier | **[osa-proof](https://github.com/HazEOskA/osa-proof)** |
 | **⚙️ APR / Agent Proof Runtime** | Kontrakty wykonania, odbiór i niezależna weryfikacja pracy agenta | **[agent-proof-runtime](https://github.com/HazEOskA/agent-proof-runtime)** |
 | **🧠 NeurOSA** | Docelowo: wspólna, trwała pamięć dla agentów przez connector i Brain API | neurosa-human-brain |
+| **🌙 Hibernacja / State Recovery** | Trwały zapis pamięci i ledgeru; odtworzenie po restarcie SQLite oraz wznowienie otwartej sesji przez `sessionId`. Nie oznacza pełnego snapshotu uruchomionego procesu agenta. | **[neurosa-human-brain](https://github.com/HazEOskA/neurosa-human-brain)** · [kontrakt sesji](https://github.com/HazEOskA/neurosa-human-brain/blob/main/docs/NEUROSA_CONNECT.md) |
 | **☁️ Cloud Workspace** | Jeden pulpit operatora dla infrastruktury, testów, kosztów i ścieżki deployu | **[osa-cloud-workspace](https://github.com/HazEOskA/osa-cloud-workspace)** |
 | **🛡️ Guardian OS** | Multi-agent analysis, decyzje, strategia i kontrola ryzyka | **[guardian-os](https://github.com/HazEOskA/guardian-os)** |
 | **🕵️ Sherlock OSA** | OSINT na danych publicznych, korelacja źródeł, evidence graph i raporty | **[Sherlock OSA](https://github.com/HazEOskA/OSINT-AGENT-SHERLOCK-OSA)** |
