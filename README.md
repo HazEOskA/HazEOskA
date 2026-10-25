@@ -77,7 +77,7 @@ $ engineering_mode
 | **🐝 OSA CORE** | Kernel pracy, organizer, misje, polityki, narzędzia i moduły: Prompt God, Lead Engine, Global Research, Radar | **[HazEOskA/OSA](https://github.com/HazEOskA/OSA)** |
 | **🧾 OSA Proof** | Team Graph → mission → runtime → tracing → evidence → `ProofReceipt` → verifier | **[osa-proof](https://github.com/HazEOskA/osa-proof)** |
 | **⚙️ APR / Agent Proof Runtime** | Kontrakty wykonania, odbiór i niezależna weryfikacja pracy agenta | **[agent-proof-runtime](https://github.com/HazEOskA/agent-proof-runtime)** |
-| **🧠 NeurOSA** | Docelowo: wspólna, trwała pamięć dla agentów przez connector i Brain API | *Integracja rozwijana; bhttps://github.com/HazEOskA/neurosa-human-brain |
+| **🧠 NeurOSA** | Docelowo: wspólna, trwała pamięć dla agentów przez connector i Brain API | neurosa-human-brain |
 | **☁️ Cloud Workspace** | Jeden pulpit operatora dla infrastruktury, testów, kosztów i ścieżki deployu | **[osa-cloud-workspace](https://github.com/HazEOskA/osa-cloud-workspace)** |
 | **🛡️ Guardian OS** | Multi-agent analysis, decyzje, strategia i kontrola ryzyka | **[guardian-os](https://github.com/HazEOskA/guardian-os)** |
 | **🕵️ Sherlock OSA** | OSINT na danych publicznych, korelacja źródeł, evidence graph i raporty | **[Sherlock OSA](https://github.com/HazEOskA/OSINT-AGENT-SHERLOCK-OSA)** |
